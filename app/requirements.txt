@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+python-dotenv
+python-multipart
+pydantic
+scikit-learn
+pandas
+numpy
+pydub
+joblib
+aiofiles
+aiohttp
+uvicorn
+psycopg2-binary
