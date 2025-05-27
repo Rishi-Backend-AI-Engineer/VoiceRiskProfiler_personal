@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Environment
+.env
+*.log
+
+# VSCode and IDEs
+.vscode/
+.idea/
+
+# Alembic compiled
+alembic/versions/__pycache__/
+alembic/__pycache__/
+
+# Audio or media files (optional)
+*.wav
+*.mp3
+*.ogg
