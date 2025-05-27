@@ -44,6 +44,10 @@ def test_db():
 def upload_audio(
     client_id: str = Form(...),
     file: UploadFile = File(...),
+    scenario: str = Form(None),
+    emotion_label: str = Form(None),
+    device: str = Form(None),
+    notes: str = Form(None),
     db: Session = Depends(get_db)
 ):
     try:
@@ -58,7 +62,11 @@ def upload_audio(
             session_id=audio_id,
             client_id=client_id,
             audio_file_path=file_path,
-            recorded_on=datetime.utcnow()
+            recorded_on=datetime.utcnow(),
+            scenario=scenario,
+            emotion_label=emotion_label,
+            device=device,
+            notes=notes
         )
 
         db.add(new_recording)
@@ -67,7 +75,11 @@ def upload_audio(
         return {
             "msg": "File uploaded successfully 🎤✅",
             "audio_id": audio_id,
-            "file_path": file_path
+            "file_path": file_path,
+            "scenario": scenario,
+            "emotion_label": emotion_label,
+            "device": device,
+            "notes": notes
         }
 
     except Exception as e:
